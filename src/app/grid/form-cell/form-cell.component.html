@@ -1,0 +1,9 @@
+<!-- child cell only rendered when parent formGroup is provided -->
+<!-- ngIf 是必要的, 应为当父类表单控制 formGroup 尚未 available 时 Angular 会抛出错误 -->
+<div *ngIf="formGroup" [formGroup]="formGroup">
+    <!-- 规定每个表单格子的数据表现形式 -->
+    <mat-form-field [floatLabel]="'never'" style="width: 100%;">
+        <!-- Angular Material 形式下的表单输入格式为 matInput 形式, 每一个 matInput 拥有 formControlName 和 id 属性 -->
+        <input matInput [formControlName]="key" [id]="key" placeholder="Enter {{ columnName }}">
+    </mat-form-field>
+</div>

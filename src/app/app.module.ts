@@ -1,14 +1,33 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+
+/* Material Modules */
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSnackBarModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+
+/* Ag-Grid Module */
+import { AgGridModule } from 'ag-grid-angular';
 
 import { AppComponent } from './app.component';
+import { GridComponent } from './grid/grid.component';
+import { FormCellComponent } from './grid/form-cell/form-cell.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GridComponent,
+    FormCellComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSnackBarModule,
+    AgGridModule.withComponents([FormCellComponent])
   ],
   providers: [],
   bootstrap: [AppComponent]
